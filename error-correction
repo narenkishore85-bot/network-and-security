@@ -1,0 +1,39 @@
+#include<stdio.h>
+#include<conio,h>
+void main(){
+    int d[7],r[7],i,c1,c2,c3,c;
+    clrscr();
+    printf("THIS WORKS FOR 4 BIT MESSAGE\n\nENTER THE 4 BIT DATA ONE BY ONE\n");
+    for(i=0;i<3;i++)
+     scanf("%d",&d[i]);
+    scanf("%d",&d[4]);
+    d[6]=d[0]^d[2]^d[4];
+    d[5]=d[0]^d[1]^d[4];
+    d[3]=d[0]^d[1]^d[2];
+    printf("\n\nTHE ENCODER BITS ARE:\n\n");
+    for(i=0;i<7;i++)
+    printf("%d\t",d[i]);
+    printf("\n\nENTER THE RECIVED DATA:\n\n");
+    for(i=0;i<7;i++)
+    scanf("%d",&r[i]);
+    c1=r[6]^r[4]^r[2]^r[0];
+    c2=r[5]^r[4]^r[1]^r[0];
+    c3=r[3]^r[2]^r[1]^r[0];
+    if(c==0)
+    printf("\nTHERE IS NO ERROR\n");
+    else
+    {
+        printf("\n\nERROR POSITION IS %d\n\n",c);
+        printf("THE CORRECTERED MESSAGE IS:\n\n");
+        if(r[7-c]==0){
+            r[7-c]=1;
+        }else{
+            r[7-c]=0;
+        }
+        for(i=0;i<7;i++){
+            printf("%d\t",r[i]);
+        }
+    }
+    getch();
+
+}
