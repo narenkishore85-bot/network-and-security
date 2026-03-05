@@ -15,5 +15,32 @@ int main(){
     }
     dvr();
     printf("enter value of i & j: ");
-    
+    scanf("%d",&i);
+    scanf("%d",&j);
+    scanf("Enter the new cost")
+    scanf("%d",&x);
+    dist[i][j]=x;
+    printf("After update\n\n");
+    dvr();
+    return 0;
+
+}
+void dvr(){
+    for(i=0;i<n;k++){
+        for(j=0;j<n;j++){
+            for(k=0;k<n;k++){
+                if(dist[i][k]+dist[k][i]<dist[i][j]){
+                    dist[i][j]=dist[i][k]+dist[k][j];
+                    temp[i][j]=k;
+                }
+                for(i=0;i<n;i++){
+                    printf("\n\nState value for router %d is \n",i+1);
+                    for(j=0;j<n;j++){
+                        printf("\t\nnode %d via %d distance %d",j+1,temp[i][j]+1,dist[i][j]);
+                    }
+                    printf("\n\n");
+                }
+            }
+        }
+    }
 }
